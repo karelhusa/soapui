@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.smartbear.soapui</groupId>
         <artifactId>soapui-project</artifactId>
-        <version>5.7.2-SNAPSHOT</version>
+        <version>5.7.2</version>
     </parent>
 
     <artifactId>soapui</artifactId>
@@ -70,22 +70,6 @@
                     <javaSource>1.8</javaSource>
                     <verbose>false</verbose>
                     <schemaDirectory>src/main/xsd</schemaDirectory>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin-version}</version>
-                <configuration>
-                    <systemProperties>
-                        <!-- Only log errors and only log to the console to decrease the log verbosity -->
-                        <soapui.log4j.config>${project.build.testOutputDirectory}/config/soapui-test-log4j.xml
-                        </soapui.log4j.config>
-                        <!-- run tests with home set to folder test-classes inside target to isolate tests from whatever user is executing the build. -->
-                        <user.home>target/test-classes</user.home>
-                    </systemProperties>
-                    <argLine>--illegal-access=permit</argLine>
                 </configuration>
             </plugin>
 
